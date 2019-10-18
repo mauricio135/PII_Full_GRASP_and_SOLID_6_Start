@@ -22,3 +22,6 @@ Thread.Sleep(500); // 0.5 segundos
 Console.WriteLine($"Cooked: {recipe.Cooked}");
 ```
 La clase ```Thread``` está definida en el espacio de nombres ```System.Threading```.
+
+
+️➡️ **Que patrón o principio has usado para esto? Una pista: lo has utilizado en el proyecto**
