@@ -11,7 +11,7 @@ En este programa trabajaremos con recetas de cocina que involucran ingredientes 
 * Agregar un método ```void Cook()```. Usando la clase ```CountdownTimer``` provista, debe pasar la propiedad Cooked a true cuando pase el tiempo indicado por ```GetCookTime()```
 * A efectos de este ejemplo, una receta se puede cocinar invocando el método ```void Cook()``` sólo una vez.
 
-️➡️ **La clase CountdownTimer y la interfaz TimerClient no se pueden modificar.**
+️➡️ **La clase CountdownTimer y la interfaz TimerClient no se pueden modificar ni se puede modificar el tipo de Recipe luego de los cambios anteriores**
 
 Para "ver" como se cocina la receta, agreguen el siguiente código al final del método ```void Main(string[])``` de la clase Program:
 
