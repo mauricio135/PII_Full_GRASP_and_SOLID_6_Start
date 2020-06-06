@@ -16,6 +16,13 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
+        public bool Cooked { get; private set ; }
+
+        //Por patrón Adapter, agregamos una clase auxiliar que nos permita acceder
+        //a los métodos de la clase CountdownTimer sin cambiar el tipo de Recipe.
+        //Hacemos compatibles dos clases que no lo son. 
+        public RecipeTimer timer = new RecipeTimer();
+
         // Agregado por Creator
         public void AddStep(Product input, double quantity, Equipment equipment, int time)
         {
@@ -61,6 +68,24 @@ namespace Full_GRASP_And_SOLID
             }
 
             return result;
+        }
+        //Agregado por Expert
+        public int GetCookTime()
+        {
+            int result = 0;
+
+            foreach (BaseStep step in this.steps)
+            {
+                result = result + step.Time;
+            }
+
+            return result;
+        }
+
+        public void Cook()
+        {
+            this.timer.GetTimeOut(this.GetCookTime());
+            this.Cooked = true;            
         }
     }
 }
